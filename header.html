@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.svg">
+    <title>SEON</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-3.6.4.min.js"></script>
+    <script>
+    // header_scrolled
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('header').addClass('header_scrolled');
+            } else {
+                $('header').removeClass('header_scrolled');
+            }
+        });
+    </script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Zeyada&display=swap');
+</style>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="header_wrap">
+                <div class="logo">
+                    <a href="/index.html">Seongyeong's Web Portfolio</a>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="/index.html#about">ABOUT ME</a></li>
+                        <li><a href="/index.html#branding">BRANDING</a></li>
+                        <li><a href="/index.html#artwork">ARTWORK</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+</body>
+
+</html>
