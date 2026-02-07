@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.svg">
+    <title>SEON</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Zeyada&display=swap');
+</style>
+
+<body>
+    <div class="wrap">
+        <header id="header_load"></header>
+        <section class="section_wrap">
+            <div class="detail_con">
+                <div class="back_btn_wrap">
+                    <a href="/index.html#artwork" class="back_btn">
+                        <span class="arrow_btn_left"></span> BACK TO LIST
+                    </a>
+                </div>
+                <div class="detail_content_area">
+                    <p id="view_category"></p>
+                    <h1 id="view_title"></h1>
+                    <p id="view_contribution"></p>
+                    <p id="view_tools"></p>
+                    <div class="desc_wrap">
+                        <p id="view_desc"></p>
+                    </div>
+                    <div class="img_area">
+                        <img id="view_mainImg" src="" alt="">
+                        <img id="view_subImg1" src="" alt="">
+                        <img id="view_subImg2" src="" alt="">
+                        <img id="view_subImg3" src="" alt="">
+                        <img id="view_subImg4" src="" alt="">
+                        <img id="view_subImg5" src="" alt="">
+                    </div>
+                </div>
+                <div class="project_nav">
+                    <a href="#" id="btn_prev" class="nav_btn">
+                        <span class="arrow_btn_left"></span>PREV
+                    </a>
+                    <a href="/index.html#artwork" id="btn_list" class="nav_btn">LIST</a>
+                    <a href="#" id="btn_next" class="nav_btn">
+                        NEXT<span class="arrow_btn_right"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <footer id="footer_load"></footer>
+    </div>
+    <script src="/js/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function () {
+    // 1. 공통 요소 불러오기
+    $("#header_load").load("/header.html");
+    $("#footer_load").load("/footer.html");
+
+    // 2. 주소창에서 id값 읽어오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('id');
+
+    if (!projectId) {
+        alert("잘못된 접근입니다.");
+        location.href = "/index.html";
+        return;
+    }
+
+    // 3. JSON 데이터 가져오기 (한 번만 호출!)
+    fetch('/data.json')
+        .then(res => res.json())
+        .then(data => {
+            const item = data[projectId];
+            const keys = Object.keys(data);
+            const currentIndex = keys.indexOf(projectId);
+
+            if (item) {
+                // --- [A] 상세 데이터 뿌리기 ---
+                $("#view_title").text(item.title);
+                $("#view_category").text(item.category);
+                $("#view_contribution").text("기여도 : " + item.contribution);
+                $("#view_mainImg").attr("src", item.mainImg);
+                $("#view_subImg1").attr("src", item.subImg1);
+                $("#view_subImg2").attr("src", item.subImg2);
+                $("#view_subImg3").attr("src", item.subImg3);
+                $("#view_subImg4").attr("src", item.subImg4);
+                $("#view_subImg5").attr("src", item.subImg5);
+                document.title = item.title + " | SEON";
+
+                // --- [B] Tools 태그 생성 ---
+                if (item.tools) {
+                    const toolList = item.tools.split(',').map(tool => {
+                        const toolName = tool.trim();
+                        const className = toolName.toLowerCase();
+                        return `<span class="tool_tag ${className}">${toolName}</span>`;
+                    }).join('');
+                    $("#view_tools").html(toolList);
+                }
+
+                // --- [C] 설명글 줄바꿈 처리 ---
+                if (item.concept) {
+                    $("#view_desc").html(item.concept.replace(/\n/g, '<br>'));
+                } else {
+                    $("#view_desc").text("");
+                }
+
+                // --- [D] 이전/다음 버튼 로직 ---
+                // 이전 버튼
+                if (currentIndex > 0) {
+                    $("#btn_prev").attr("href", `./detail.html?id=${keys[currentIndex - 1]}`);
+                    $("#btn_prev").css("visibility", "visible");
+                } else {
+                    $("#btn_prev").css("visibility", "hidden");
+                }
+
+                // 다음 버튼
+                if (currentIndex < keys.length - 1 && currentIndex !== -1) {
+                    $("#btn_next").attr("href", `./detail.html?id=${keys[currentIndex + 1]}`);
+                    $("#btn_next").css("visibility", "visible");
+                } else {
+                    $("#btn_next").css("visibility", "hidden");
+                }
+
+            } else {
+                console.error("해당 ID의 데이터를 찾을 수 없습니다.");
+                alert("데이터를 찾을 수 없습니다.");
+            }
+        })
+        .catch(err => console.error("데이터 로드 중 오류 발생:", err));
+});
+    </script>
+</body>
+
+</html>
