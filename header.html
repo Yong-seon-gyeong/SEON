@@ -12,10 +12,41 @@
     // header_scrolled
         $(window).scroll(function () {
             if ($(this).scrollTop() > 100) {
-                $('header').addClass('header_scrolled');
+                $('#header').addClass('header_scrolled');
             } else {
-                $('header').removeClass('header_scrolled');
+                $('#header').removeClass('header_scrolled');
             }
+        });
+
+    // m_menu
+        var burger = $('.menu_trigger');
+
+        burger.each(function (index) {
+            var $this = $(this);
+
+            $this.on('click', function (e) {
+                e.preventDefault();
+                $(this).toggleClass('active-' + (index + 1));
+                $('.m_menu').css('margin-left', $(this).hasClass('active-' + (index + 1)) ? '0' : '100vw');
+
+                $('body').toggleClass('menu-open');
+
+            });
+        });
+
+        $('.m_menu li a').on('click', function (e) {
+            e.preventDefault();
+            var target = $(this).attr('href');
+            $('.m_menu').css('margin-left', '100vw');
+
+            setTimeout(function () {
+                window.location.href = target;
+            }, 500);
+        });
+
+        $('.m_menu li a').on('click', function () {
+            $('.menu-trigger').toggleClass('active-1');
+            $('body').removeClass('menu-open');
         });
     </script>
 </head>
@@ -25,19 +56,36 @@
 
 <body>
     <div class="wrap">
-        <header>
-            <div class="header_wrap">
+        <header id="header_wrap">
+            <div id="header">
                 <div class="logo">
                     <a href="/index.html">Seongyeong's Web Portfolio</a>
                 </div>
-                <div class="nav">
+                <nav class="nav_menu_con">
                     <ul>
-                        <li><a href="/index.html#about">ABOUT ME</a></li>
-                        <li><a href="/index.html#branding">BRANDING</a></li>
-                        <li><a href="/index.html#artwork">ARTWORK</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                        <li>
+                            <ul class="nav_menu">
+                                <li><a href="/index.html#about">ABOUT ME</a></li>
+                                <li><a href="/index.html#branding">BRANDING</a></li>
+                                <li><a href="/index.html#artwork">ARTWORK</a></li>
+                                <li><a href="#contact">CONTACT</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                                <a class="menu_trigger" href="javascript:return false;">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                                <ul class="m_menu">
+                                    <li><a href="/index.html#about">ABOUT ME</a></li>
+                                    <li><a href="#/index.html#branding">BRANDING</a></li>
+                                    <li><a href="/index.html#artwork">ARTWORK</a></li>
+                                    <li><a href="#contact">CONTACT</a></li>
+                                </ul>
+                            </li>
                     </ul>
-                </div>
+                </nav>
             </div>
         </header>
 </body>
