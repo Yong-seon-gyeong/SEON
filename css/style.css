@@ -65,8 +65,7 @@ body, html{
 .nav_menu li a:hover{
     color: salmon;
 }
-.menu_trigger,
-.m_menu {
+.nav_menu_con .menu_trigger, .nav_menu_con .m_menu{
     display: none;
 }
 @media(max-width:800px){
@@ -938,3 +937,4 @@ body, html{
     width: 100%;
 }
 }
+
