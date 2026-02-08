@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../image/favicon.svg">
     <title>SEON</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Zeyada&display=swap');
@@ -18,7 +18,7 @@
         <section class="section_wrap">
             <div class="detail_con">
                 <div class="back_btn_wrap">
-                    <a href="/index.html#artwork" class="back_btn">
+                    <a href="../index.html#artwork" class="back_btn">
                         <span class="arrow_btn_left"></span> BACK TO LIST
                     </a>
                 </div>
@@ -43,7 +43,7 @@
                     <a href="#" id="btn_prev" class="nav_btn">
                         <span class="arrow_btn_left"></span>PREV
                     </a>
-                    <a href="/index.html#artwork" id="btn_list" class="nav_btn">LIST</a>
+                    <a href="../index.html#artwork" id="btn_list" class="nav_btn">LIST</a>
                     <a href="#" id="btn_next" class="nav_btn">
                         NEXT<span class="arrow_btn_right"></span>
                     </a>
@@ -52,12 +52,12 @@
         </section>
         <footer id="footer_load"></footer>
     </div>
-    <script src="/js/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(function () {
     // 1. 공통 요소 불러오기
-    $("#header_load").load("/header.html");
-    $("#footer_load").load("/footer.html");
+    $("#header_load").load("../header.html");
+    $("#footer_load").load("../footer.html");
 
     // 2. 주소창에서 id값 읽어오기
     const urlParams = new URLSearchParams(window.location.search);
@@ -65,12 +65,12 @@
 
     if (!projectId) {
         alert("잘못된 접근입니다.");
-        location.href = "/index.html";
+        location.href = "../index.html";
         return;
     }
 
     // 3. JSON 데이터 가져오기 (한 번만 호출!)
-    fetch('/data.json')
+    fetch('../data.json')
         .then(res => res.json())
         .then(data => {
             const item = data[projectId];
@@ -133,5 +133,6 @@
 });
     </script>
 </body>
+
 
 </html>
