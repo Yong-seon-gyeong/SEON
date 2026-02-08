@@ -70,6 +70,9 @@ body, html{
 }
 @media(max-width:800px){
     .nav_menu{display: none;}
+    .nav_menu_con .menu_trigger, .nav_menu_con .m_menu{
+    display: block;
+}
 }
 
 /*mobile_menu*/
@@ -931,5 +934,6 @@ body, html{
     width: 100%;
 }
 }
+
 
 
