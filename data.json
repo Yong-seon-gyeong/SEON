@@ -5,11 +5,11 @@
     "tools" : "MiriCanvas",
     "contribution" : "디자인100%",
     "concept": "(본 프로젝트는 사내 디자인 가이드라인에 따라 미리캔버스(MiriCanvas) 툴을 활용하여 제작되었습니다)\n고대 사막의 전통과 자연의 원료인 올리브를 현대적으로 재해석한 포스터 디자인입니다. 올리브 본연의 싱그러움과 전통적인 무게감을 시각화하는 데 집중했으며, 효율적이고 완성도 높은 타이포그래피 배치를 시도했습니다.",
-    "mainImg": "../../image/Artwork/Aleppo Soap Product Introduction.jpg",
-    "subImg1": "../../image/Artwork/aleppo-1.jpg",
-    "subImg2": "../../image/Artwork/aleppo-2.jpg",
-    "subImg3": "../../image/Artwork/aleppo-3.jpg",
-    "subImg4": "../../image/Artwork/aleppo-4.jpg"
+    "mainImg": "../image/Artwork/Aleppo Soap Product Introduction.jpg",
+    "subImg1": "../image/Artwork/aleppo-1.jpg",
+    "subImg2": "../image/Artwork/aleppo-2.jpg",
+    "subImg3": "../image/Artwork/aleppo-3.jpg",
+    "subImg4": "../image/Artwork/aleppo-4.jpg"
   },
   "poster2": {
     "title": "해버스파데이 Mom's 힐링케어 프로그램 이벤트",
@@ -17,11 +17,11 @@
     "tools" : "MiriCanvas",
     "contribution" : "디자인100%",
     "concept": "(본 프로젝트는 사내 디자인 가이드라인에 따라 미리캔버스(MiriCanvas) 툴을 활용하여 제작되었습니다)\n 해버스파데이가 제안하는 엄마들의 휴식, 'Mom's 힐링 케어' 프로그램 홍보 포스터입니다. 일상의 피로를 녹여내는 부드러운 브릭 컬러 톤앤매너를 바탕으로 브랜드의 세련된 감각을 담아냈습니다. 복잡한 텍스트보다는 프로그램별 맞춤형 아이콘을 배치하여 전문 케어의 신뢰도를 높였으며, 프로모션 가격의 가독성을 극대화하여 마케팅 효과를 고려한 디자인입니다.",
-    "mainImg": "../../image/Artwork/Mom’s Healing Care Event.jpg",
-    "subImg1": "../../image/Artwork/Mom’s-1.jpg",
-    "subImg2": "../../image/Artwork/Mom’s-2.jpg",
-    "subImg3": "../../image/Artwork/Mom’s-3.jpg",
-    "subImg4": "../../image/Artwork/Mom’s-4.jpg"
+    "mainImg": "../image/Artwork/Mom’s Healing Care Event.jpg",
+    "subImg1": "../image/Artwork/Mom’s-1.jpg",
+    "subImg2": "../image/Artwork/Mom’s-2.jpg",
+    "subImg3": "../image/Artwork/Mom’s-3.jpg",
+    "subImg4": "../image/Artwork/Mom’s-4.jpg"
   },
   "poster3": {
     "title": "해버스파데이 시그니처 관리 BEST4",
@@ -234,4 +234,5 @@
   
 
 }
+
 
