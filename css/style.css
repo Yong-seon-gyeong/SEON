@@ -11,14 +11,26 @@ a{
     text-decoration: none;
     color: #333;
 }
+:root {
+    --main-font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    --main-color: #333;
+}
+
 body, html{
-    font-family: pretendard;
-    color: #333;
+    color: var(--main-color);
+    font-family: var(--main-font);
     font-weight: 300;
     font-size: 14px;
     line-height: 1.4;
+    
+    /* 부드러운 스크롤 및 줄바꿈 설정 */
     scroll-behavior: smooth;
+    word-break: keep-all; 
+    
+    /* 아이폰/맥 전용 텍스트 최적화 */
     -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .wrap{
     margin: 0 auto;
@@ -935,6 +947,7 @@ body, html{
     width: 100%;
 }
 }
+
 
 
 
