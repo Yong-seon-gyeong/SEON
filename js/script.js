@@ -13,4 +13,20 @@ if ($('.single-counter').length) { // 1번: .single-counter가 페이지에 있�
       delay: 10,
       time: 1000
     });
+
 }
+
+//scroll_top_btn
+$('.scroll_top').hide();
+$(window).scroll(function(){
+    var height = $(window).scrollTop();
+    if(height >200){
+        $('.scroll_top').fadeIn(0)
+    }
+    else{
+        $('.scroll_top').fadeOut(0);
+    }
+});
+$('.scroll_top').click(function(){
+    $(window).scrollTop(0) ;
+});
