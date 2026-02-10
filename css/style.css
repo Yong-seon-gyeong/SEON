@@ -167,11 +167,17 @@ button {
         padding-bottom: 50px;
     }
 
-    .m_menu li a {
+     .m_menu li a {
         display: block;
         /*글꼴바꾸기*/
         font-size: 25px;
         color: #333;
+        width: fit-content;
+        margin: 0 auto;
+        transition: all 0.4s;
+    }
+    .m_menu li a:hover{
+       font-weight: bold;
     }
 
     .m_menu li img {
@@ -200,16 +206,41 @@ button {
 
 /* visual */
 .visual{
+    position: relative;
     margin: 0 auto;
     height: 100vh;
     background-color: #eeeceb;
+    overflow: hidden;
+}
+#visual-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.glassy-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    pointer-events: none; /* 텍스트 선택을 방해하지 않음 */
+    z-index: 2;
 }
 .visual_text{
+    position: relative;
+    z-index: 3;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 8vw;
+    color:#333;
 }
 .visual_text h1{
     font-weight: 800;
@@ -220,7 +251,6 @@ button {
     font-size: clamp(1.3rem, 1.5vw, 1.5rem);
     line-height: 1.8em;
 }
-
 /* about */
 .section_wrap{
     padding: 5vw 8vw;
@@ -991,6 +1021,7 @@ button {
     width: 100%;
 }
 }
+
 
 
 
