@@ -20,33 +20,30 @@
     // m_menu
         var burger = $('.menu_trigger');
 
-        burger.each(function (index) {
-            var $this = $(this);
+burger.each(function (index) {
+    var $this = $(this);
 
-            $this.on('click', function (e) {
-                e.preventDefault();
-                $(this).toggleClass('active-' + (index + 1));
-                $('.m_menu').css('margin-left', $(this).hasClass('active-' + (index + 1)) ? '0' : '100vw');
+    $this.on('click', function (e) {
+        e.preventDefault();
+        // 1. 버거 버튼 애니메이션
+        $(this).toggleClass('active-' + (index + 1));
+        
+        // 2. 바디에 클래스 넣기 (메뉴를 열고 닫는 스위치)
+        $('body').toggleClass('menu-open');
+    });
+});
 
-                $('body').toggleClass('menu-open');
+// 메뉴 링크 클릭 시 메뉴 닫기
+$('.m_menu li a').on('click', function (e) {
+    var target = $(this).attr('href');
+    
+    $('body').removeClass('menu-open');
+    $('.menu_trigger').removeClass('active-1');
 
-            });
-        });
-
-        $('.m_menu li a').on('click', function (e) {
-            e.preventDefault();
-            var target = $(this).attr('href');
-            $('.m_menu').css('margin-left', '100vw');
-
-            setTimeout(function () {
-                window.location.href = target;
-            }, 500);
-        });
-
-        $('.m_menu li a').on('click', function () {
-            $('.menu-trigger').toggleClass('active-1');
-            $('body').removeClass('menu-open');
-        });
+    setTimeout(function () {
+        window.location.href = target;
+    }, 500);
+});
     </script>
 </head>
 <style>
@@ -90,6 +87,7 @@
 </body>
 
 </html>
+
 
 
 
