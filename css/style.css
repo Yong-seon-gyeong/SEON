@@ -219,7 +219,7 @@ button {
     height: 100%;
 }
 .section_title{
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1.5rem;
 }
 .about_box{
@@ -289,6 +289,9 @@ button {
 }
 .about_box{
     width: 100%;
+}
+    .section_title{
+    font-size: 2rem;
 }
 }
 
@@ -784,6 +787,11 @@ button {
     transform: rotate(45deg);
     margin-left: -2px; /* 중앙 정렬 미세조정 */
 }
+@media(max-width:600px){
+    .contact_con{
+    width: 100%;
+}
+}
 /* footer */
 .footer{
     width: 100%;
@@ -964,6 +972,7 @@ button {
     width: 100%;
 }
 }
+
 
 
 
