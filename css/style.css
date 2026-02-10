@@ -139,9 +139,7 @@ button {
         left: 0;
         bottom: 0;
         z-index: 99;
-       background-color: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background-color: rgb(238, 236, 235);
         /*메뉴배경컬러*/
         width: 100vw;
         height: 100vh;
@@ -151,9 +149,17 @@ button {
         justify-content: center;
         align-content: center;
         box-sizing: border-box;
-        margin-left: 100vw;
-        transition: 0.5s ease;
+        transform: translateX(100vw);
+        -webkit-transform: translateX(100vw);
+        transition: 0.4s ease;
         text-align: center;
+    }
+    body.menu-open .m_menu {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    }
+    body.menu-open {
+    overflow: hidden;
     }
 
     .m_menu li {
@@ -980,6 +986,7 @@ button {
     width: 100%;
 }
 }
+
 
 
 
