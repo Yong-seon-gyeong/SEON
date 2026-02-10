@@ -32,6 +32,12 @@ body, html{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
 .wrap{
     margin: 0 auto;
 }
@@ -785,7 +791,18 @@ body, html{
     text-align: center;
     padding: 0 0 5rem;
 }
-
+.scroll_top{
+    background-color: #ccc5c2;
+    padding: 15px;
+    border-radius: 50%;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+}
+.scroll_top svg{
+    width: 20px;
+    height: 20px;
+}
 /* sub */
 .detail_con{
     width: 90%;
@@ -947,6 +964,7 @@ body, html{
     width: 100%;
 }
 }
+
 
 
 
