@@ -171,7 +171,7 @@ button {
         display: block;
         /*글꼴바꾸기*/
         font-size: 25px;
-        color: #fff;
+        color: #333;
     }
 
     .m_menu li img {
@@ -986,6 +986,7 @@ button {
     width: 100%;
 }
 }
+
 
 
 
