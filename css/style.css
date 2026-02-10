@@ -978,6 +978,11 @@ button {
 #btn_list:hover{
     color: salmon;
 }
+@media (max-width:1200px){
+    .detail_content_area{
+    width: 80%;
+}
+}
 @media (max-width:600px){
     .detail_content_area{
     width: 100%;
@@ -986,6 +991,7 @@ button {
     width: 100%;
 }
 }
+
 
 
 
